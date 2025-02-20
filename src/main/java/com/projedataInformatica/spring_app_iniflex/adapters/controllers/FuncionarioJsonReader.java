@@ -1,4 +1,4 @@
-package com.projedataInformatica.spring_app_iniflex.adapters;
+package com.projedataInformatica.spring_app_iniflex.adapters.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -13,7 +13,7 @@ import java.util.List;
 public class FuncionarioJsonReader {
 
     // Método para ler o arquivo JSON e deserializar para uma lista de Funcionarios
-    public String lerFuncionariosDoArquivo(String arquivoJson) throws IOException {
+    public List<Funcionario> lerFuncionariosDoArquivo(String arquivoJson) throws IOException {
         // Criação de um ObjectMapper para manipulação dos dados
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -23,7 +23,7 @@ public class FuncionarioJsonReader {
         // Lê o arquivo JSON e converte para uma lista de objetos Funcionario
         List<Funcionario> funcionarios =  objectMapper.readValue(new File(arquivoJson), objectMapper.getTypeFactory().constructCollectionType(List.class, Funcionario.class));
 
-        return funcionarios.get(7).getNome();
+        return funcionarios;
     }
 }
 

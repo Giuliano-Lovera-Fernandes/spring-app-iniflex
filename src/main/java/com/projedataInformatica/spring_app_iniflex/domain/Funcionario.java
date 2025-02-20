@@ -2,39 +2,33 @@ package com.projedataInformatica.spring_app_iniflex.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Funcionario {
-        private String nome;
+public class Funcionario extends Pessoa {
 
-        @JsonFormat(pattern = "yyyy-MM-dd")
-        private LocalDate dataNascimento;
-        private double salario;
+
+
+        private BigDecimal salario;
         private String funcao;
 
+        public Funcionario(){
+                super("", LocalDate.now());
+                this.salario = BigDecimal.ZERO;
+                this.funcao = "";
+        }
+
+        public Funcionario(String nome, LocalDate dataNascimento) {
+                super(nome, dataNascimento);
+        }
         // Getters e Setters
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public LocalDate getDataNascimento() {
-                return dataNascimento;
-        }
-
-        public void setDataNascimento(LocalDate dataNascimento) {
-               this.dataNascimento = dataNascimento;
-        }
 
         // Getter e Setter para 'salario'
-        public double getSalario() {
+        public BigDecimal getSalario() {
                 return salario;
         }
 
-        public void setSalario(double salario) {
+        public void setSalario(BigDecimal salario) {
                 this.salario = salario;
         }
 
