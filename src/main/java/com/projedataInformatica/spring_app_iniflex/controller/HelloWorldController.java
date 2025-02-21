@@ -3,7 +3,7 @@ package com.projedataInformatica.spring_app_iniflex.controller;
 //para que o spring identifique que ela é um controller e realize os eventos necessários
 
 
-import com.projedataInformatica.spring_app_iniflex.domain.User;
+import com.projedataInformatica.spring_app_iniflex.domain.TituloRelatorio;
 import com.projedataInformatica.spring_app_iniflex.service.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class HelloWorldController {
     }
 
     @PostMapping("/{id}")
-    public String helloWorldPost(@PathVariable("id") String id, @RequestParam(value="filter", defaultValue="nenhum") String filter, @RequestBody User body){
+    public String helloWorldPost(@PathVariable("id") String id, @RequestParam(value="filter", defaultValue="nenhum") String filter, @RequestBody TituloRelatorio body){
         //return "Hello World " + body.getName() + id;
         return "Hello World " + filter;
     }

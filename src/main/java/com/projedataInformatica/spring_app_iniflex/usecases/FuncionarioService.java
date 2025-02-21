@@ -11,28 +11,27 @@ import java.util.Optional;
 @Service
 public interface FuncionarioService {
 
-    //void InserirFuncionarios(List<Funcionario> funcionarios);
-    List<Funcionario> inserirTodosFuncionarios();
+    List<Funcionario> inserirFuncionarios();
 
-    Optional<Funcionario> removerFuncionarioPorNome(String nome);
+    Optional<Funcionario> removerFuncionarioNome(String nome);
 
-    List<Funcionario> getFuncionariosModificados();
+    List<Funcionario> ListarFuncionariosModificados();
 
-    StringBuilder imprimirFuncionarios(List<Funcionario> funcionarios);
+    StringBuilder imprimirInformacoesFuncionarios(List<Funcionario> funcionarios);
 
-    void aplicarAumentoSalarial();
+    StringBuilder aplicarAumentoSalarial(BigDecimal percentualAumento);
 
-    Map<String, List<Funcionario>> agruparPorFuncao();
+    Map<String, List<Funcionario>> agruparFuncionariosFuncao();
 
-    StringBuilder imprimirFuncionariosAgrupados(Map<String, List<Funcionario>> funcionarios);
+    StringBuilder imprimirFuncionariosAgrupadosFuncao(Map<String, List<Funcionario>> funcionarios);
 
-    StringBuilder imprimirFuncionariosAniversariantesMesesEspecificos(List<Funcionario> funcionarios);
+    StringBuilder imprimirFuncionariosAniversariantesMesesEspecificos(List<Funcionario> funcionarios, int primeiroMes, int segundoMes);
 
-    StringBuilder imprimirFuncionarioMaisVelho(List<Funcionario> funcionarios);
+    StringBuilder imprimirFuncionarioMaiorIdade (List<Funcionario> funcionarios);
 
-    void ordenarFuncionariosPorNome();
+    void ordenarFuncionariosNome();
 
-    String calcularTotalSalarios();
+    String calcularTotalSalariosFuncionarios();
 
-    StringBuilder imprimirFuncionariosComSalariosMinimos(List<Funcionario> funcionarios);
+    StringBuilder imprimirFuncionariosSalariosMinimos(List<Funcionario> funcionarios, BigDecimal salarioMinimo);
 }
